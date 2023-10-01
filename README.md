@@ -33,4 +33,13 @@ YTcyDLoad es un programa de línea de comandos (CLI) diseñado para descargar vi
 - Este programa se basa en bibliotecas de terceros y utiliza la API de YouTube para descargar contenido. Asegúrate de cumplir con los términos de servicio de YouTube al utilizar esta herramienta.
 - El programa utiliza la biblioteca "art" para imprimir un título decorativo en la consola. Asegúrate de tener esta biblioteca instalada para obtener una mejor experiencia visual.
 
+## Errores detectados 😓
+- Aún falla la descarga en videos con restricciones de edad o enlaces privados.
+- A veces la autorización OAuth falla, deteniendo la descarga o cerrando la consola.
+
+## Futuras actualizaciones ♥️
+- Mejorar el manejo de errores y evitar que las descargas se detengan cuando un link falla.
+- Solucionar el problema con OAuth
+- Crear una interfaz gráfica para facilitar el uso del programa.
+
 ¡Disfruta descargando contenido de YouTube con YTcyDLoad!
