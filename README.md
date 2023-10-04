@@ -1,5 +1,5 @@
 # YTcyDLoad o(*￣▽￣*)ブ
-YouTube Lucy DownLoader
+(⁠｡⁠•̀⁠ᴗ⁠-⁠)⁠✧ YouTube Lucy DownLoader (⁠ ⁠ꈍ⁠ᴗ⁠ꈍ⁠)
 
 ## Descripción 👌
 YTcyDLoad es un programa de línea de comandos (CLI) diseñado para descargar videos y audio de YouTube. El programa ofrece opciones para descargar videos individuales, listas de reproducción de videos y convertir videos en formato MP3. El código está estructurado en varios módulos para mantenerlo organizado y modular.
