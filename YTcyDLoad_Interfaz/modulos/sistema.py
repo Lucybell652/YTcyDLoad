@@ -1,22 +1,5 @@
-#Version 3
 import os
 from art import * # Importamos la librería "art"
-
-# def cls(): # Limpiar consola
-#     os.system('cls')
-
-
-# def sep(): # Solo un separador
-#     print("=" * 71)
-
-
-# def mensaje(): # La "interfaz" predeterminada
-#     cls()
-#     tprint("YTcyDLoad")
-#     lucy = "LucyFer"
-#     print(f"{lucy:=^62}")
-#     print()
-
 
 def ruta_fin_video(): # Obtener ruta raiz de descargas, obtener subcarpeta "video" y crearla en caso de no existir
     descargas_path = os.path.join(os.path.expanduser('~'), 'Downloads')

@@ -1,4 +1,5 @@
 import customtkinter as CTk
+import time
 from tkinter import ttk
 from pytube import YouTube
 from modulos.descargas import (
@@ -7,11 +8,10 @@ from modulos.descargas import (
     descargar_video_playlist,
     descargar_mp3_playlist
 )
-from modulos.sistema import limpiar_nombre
+# from modulos.sistema import limpiar_nombre
 
 boton_elegido = None
 boton_formato = None
-barraprogreso = 0
 
 window = CTk.CTk()
 window.title("YTcyDLoad")
@@ -35,20 +35,40 @@ def playlist():
 def video_formato():
     global boton_formato
     boton_formato = "video_formato"
+    boton_descarga()
 
 def mp3():
     global boton_formato
     boton_formato = "mp3"
+    boton_descarga()
 
 def crear_botones_inferiores():
     CTk.CTkLabel(window, text="Elige formato a descargar:").place(x=133, y=150)
-    boton_video = CTk.CTkButton(window, text="Video", width=100, height=25, command=video_formato)
-    boton_video.place(x=96, y=180)
-    boton_mp3 = CTk.CTkButton(window, text="MP3", width=100, height=25, command=mp3)
-    boton_mp3.place(x=212, y=180)
-    boton_descarga = CTk.CTkButton(window, text="Descargar", width=100, height=25, command=iniciar_descarga)
-    boton_descarga.place(x=154, y=215)  
-    window.geometry("400x270")
+    boton_video = CTk.CTkButton(window, text="Video", width=100, height=25, command=video_formato).place(x=96, y=180)
+    boton_mp3 = CTk.CTkButton(window, text="MP3", width=100, height=25, command=mp3).place(x=212, y=180)
+    window.geometry("400x210")
+
+def boton_descarga():
+    inicio = CTk.CTkLabel(window, text="Pulse para descargar").place(x=150, y=210)
+    boton_descarga = CTk.CTkButton(window, text="Descargar", width=100, height=25, command=iniciar_descarga).place(x=155, y=240)
+    window.geometry("400x300")
+
+def iniciar_descarga():
+    url = entrada_url.get()  # Obtiene la URL del campo de entrada
+
+    if boton_elegido == "video_individual":
+        if boton_formato == "video_formato":
+            descarga_video(url)
+            fin.place(x=190, y=270)
+        else:
+            descargar_video_mp3(url)
+            fin.place(x=190, y=270)
+    else:
+        if boton_formato == "video_formato":
+            descargar_video_playlist(url)
+            fin.place(x=190, y=270)
+        else:
+            descargar_mp3_playlist
 
 # CTk.CTkLabel(window, text="").pack(side=LEFT, padx=40) # Espacio "falso" para dar la separación entre la ventana y el botón
 boton_video = CTk.CTkButton(window, text="Video", width=100, height=25, command=video_indiv)
@@ -56,24 +76,6 @@ boton_video.place(x=96, y=120)
 boton_playlist = CTk.CTkButton(window, text="Playlist", width=100, height=25, command=playlist)
 boton_playlist.place(x=212, y=120)
 fin = CTk.CTkLabel(window, text="Listo")
-
-def iniciar_descarga():
-    url = entrada_url.get()  # Get URL from entry field
-
-    if boton_elegido == "video_individual":
-        if boton_formato == "video_formato":
-            descarga_video(url)
-            fin.place(x=190, y=240)
-        else:
-            descargar_video_mp3(url)
-            fin.place(x=190, y=240)
-    else:
-        if boton_formato == "video_formato":
-            descargar_video_playlist(url)
-            fin.place(x=190, y=240)
-        else:
-            descargar_mp3_playlist(url)
-            fin.place(x=190, y=240)
 
 # Mostramos la ventana
 window.mainloop()
