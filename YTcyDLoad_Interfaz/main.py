@@ -1,5 +1,4 @@
 import customtkinter as CTk
-import time
 from tkinter import ttk
 from pytube import YouTube
 from modulos.descargas import (
