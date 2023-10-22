@@ -63,14 +63,11 @@ window.geometry("400x180")
 
 CTk.CTkLabel(window, text="YTcyDLoad", font=CTk.CTkFont(size=20, weight="bold")).pack(pady=10)
 CTk.CTkLabel(window, text="Ingresa el URL de Youtube:").pack()
-entrada_url = CTk.CTkEntry(window, width=300, placeholder_text="URL...")
-entrada_url.pack()
+entrada_url = CTk.CTkEntry(window, width=300, placeholder_text="URL...").pack()
 
 # CTk.CTkLabel(window, text="").pack(side=LEFT, padx=40) # Espacio "falso" para dar la separación entre la ventana y el botón
-boton_video = CTk.CTkButton(window, text="Video", width=100, height=25, command=video_indiv)
-boton_video.place(x=96, y=120)
-boton_playlist = CTk.CTkButton(window, text="Playlist", width=100, height=25, command=playlist)
-boton_playlist.place(x=212, y=120)
+boton_video = CTk.CTkButton(window, text="Video", width=100, height=25, command=video_indiv).place(x=96, y=120)
+boton_playlist = CTk.CTkButton(window, text="Playlist", width=100, height=25, command=playlist).place(x=212, y=120)
 fin = CTk.CTkLabel(window, text="Listo")
 
 # Mostramos la ventana
