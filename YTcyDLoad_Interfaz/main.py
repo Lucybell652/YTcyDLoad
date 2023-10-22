@@ -9,15 +9,6 @@ from modulos.descargas import (
 boton_elegido = None
 boton_formato = None
 
-window = CTk.CTk()
-window.title("YTcyDLoad")
-window.geometry("400x180")
-
-CTk.CTkLabel(window, text="YTcyDLoad", font=CTk.CTkFont(size=20, weight="bold")).pack(pady=10)
-CTk.CTkLabel(window, text="Ingresa el URL de Youtube:").pack()
-entrada_url = CTk.CTkEntry(window, width=300, placeholder_text="URL...")
-entrada_url.pack()
-
 def video_indiv():
     global boton_elegido
     boton_elegido = "video_individual"
@@ -65,6 +56,15 @@ def iniciar_descarga():
             fin.place(x=190, y=270)
         else:
             descargar_mp3_playlist
+
+window = CTk.CTk()
+window.title("YTcyDLoad")
+window.geometry("400x180")
+
+CTk.CTkLabel(window, text="YTcyDLoad", font=CTk.CTkFont(size=20, weight="bold")).pack(pady=10)
+CTk.CTkLabel(window, text="Ingresa el URL de Youtube:").pack()
+entrada_url = CTk.CTkEntry(window, width=300, placeholder_text="URL...")
+entrada_url.pack()
 
 # CTk.CTkLabel(window, text="").pack(side=LEFT, padx=40) # Espacio "falso" para dar la separación entre la ventana y el botón
 boton_video = CTk.CTkButton(window, text="Video", width=100, height=25, command=video_indiv)
