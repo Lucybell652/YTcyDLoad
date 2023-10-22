@@ -1,14 +1,10 @@
 import customtkinter as CTk
-from tkinter import ttk
-from pytube import YouTube
 from modulos.descargas import (
     descarga_video,
     descargar_video_mp3,
     descargar_video_playlist,
     descargar_mp3_playlist
 )
-# from modulos.sistema import limpiar_nombre
-
 boton_elegido = None
 boton_formato = None
 
