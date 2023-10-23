@@ -1,5 +1,4 @@
 import os
-from art import * # Importamos la librería "art"
 
 def ruta_fin_video(): # Obtener ruta raiz de descargas, obtener subcarpeta "video" y crearla en caso de no existir
     descargas_path = os.path.join(os.path.expanduser('~'), 'Downloads')
