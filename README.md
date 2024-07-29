@@ -8,7 +8,7 @@ YTcyDLoad es un programa de línea de comandos (CLI) e intefaz grafica diseñado
 ## Requisitos 💻
 1. Python 3.x
 2. Bibliotecas de Python:
-   - pytube
+   - pytubefix (reemplazando a PyTube)
    - moviepy
    - requests
    - customtkinter
